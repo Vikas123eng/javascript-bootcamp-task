@@ -123,19 +123,50 @@ let random5 = Math.floor(Math.random() * 1000);
 console.log(random5);
 prime(random5);
 
+//Part 7:
+console.log("Part 7:")
+VowelsCount = (str) =>{
+    let vowels=['a','e','i','o','u'];
+    let count=0;
+        for(let i=0;i<str.length;i++){
+            for(let j=0;j<vowels.length;j++){
+            if(str[i].toLocaleLowerCase()==vowels[j]){
+                count++;
+            }
+            }
+        }
+        console.log("The number of vowels"+" "+count);
+}
+
+let sentence=["Write",  "JavaScript"," function"," that", "takes","a" ,"string", "parameter","counts" ,"number"," vowels "," string"]
+let random8=Math.floor(Math.random()*sentence.length)
+console.log("The word is "+sentence[random8]);
+VowelsCount(sentence[random8].toLocaleLowerCase());
+
 //Part 8:
+let random7=Math.floor(Math.random()*50)
 console.log("Part 8:")
 perfectNumber = (arg) =>{
     let sum=0;
-   for(let i=1;i<=arg;i++)
+   for(let i=1;i<arg;i++)
    {
-    if()
+    if(arg%i===0){
+        sum+=i;
+    }
+   }
+   if(sum==arg){
+    console.log("Perfect Number")
+   }
+   else{
+    console.log("Not a Perfect Number")
    }
 }
+console.log("The number is :"+random7)
+perfectNumber(random7)
 
 
 //Part 9
-let random7=Math.floor(Math.random()*50)
+
 console.log("Part 9:")
 Fibonacci = (arg) =>{
     let fib =[0,1];
