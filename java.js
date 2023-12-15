@@ -247,9 +247,52 @@
 //Assignment 3:
 
 //Part 1:
-console.log("Part 1:")
 
+// getRandomColor = () =>{
+//   let code ='0123456789ABCDEF'
+//   let color='#'
+//   for(let i=0;i<6;i++){
+//     color+=code[Math.floor(Math.random()*code.length)]
+//   }
+//   return color;
+// }
+// changeBackgroundColor = () =>{
+//   document.body.style.backgroundColor = getRandomColor();
+  
+// }
+// document.addEventListener('click',changeBackgroundColor)
 
+const names = [
+  "Aarav", "Sanya", "Vikram", "Neha", "Rohan", "Priya", "Amit", "Meera", "Rajiv", "Ananya"
+];
+
+let currentIndex = 0; // Keeps track of the current name index
+
+function updateName() {
+  const currentName = names[currentIndex];
+  document.getElementById("current-name").textContent = currentName;
+}
+
+const nextButton = document.getElementById("next-button");
+nextButton.addEventListener("click", function() {
+  currentIndex++;
+  if (currentIndex === names.length) {
+    currentIndex = 0; // Wrap around to the beginning
+  }
+  updateName();
+});
+
+const previousButton = document.getElementById("previous-button");
+previousButton.addEventListener("click", function() {
+  currentIndex--;
+  if (currentIndex === -1) {
+    currentIndex = names.length - 1; // Wrap around to the end
+  }
+  updateName();
+});
+
+// Initially show the first name
+updateName();
 
 
 
