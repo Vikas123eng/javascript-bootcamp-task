@@ -91,37 +91,79 @@ function isPalindrome(str) {
   const reversedStr = cleanStr.split('').reverse().join('');
   
   if (cleanStr === reversedStr) {
-      console.log(str+" is a palindrome.");
+      console.log(str+" is a palindrome.");        
   } else {
       console.log(str+" is not a palindrome.");
   }
 }
-isPalindrome("A man, a plan, a canal, Panama");
+let sentences=["A man, a plan, a canal, Panama","naman","Goose","eye","corona","hehe"]
+let random10=Math.floor(Math.random()*sentences.length)
+isPalindrome(sentences[random10]);
 
 
 //Part 5:
 console.log("Part 5:")
-prime = (num) => {
+
+Prime = (num) => {
   let sq = Math.sqrt(num);
   let flag = false;
-
-  for (let i = 2; i <= sq; i++) {
+  let i=0;
+  for ( i = 2; i <= sq; i++) {
       if (num % i === 0) {
           flag = true;
           break; 
       }
   }
 
-  if (flag) {
-      console.log("Not a prime number");
-  } else {
-      console.log("A prime number");
-  }
+  if (!flag) {
+
+      
+      console.log(num)
+  } 
 }
 
 let random5 = Math.floor(Math.random() * 1000);
-console.log(random5);
-prime(random5);
+console.log("The number is : "+random5);
+for(let j=2;j<=random5;j++){
+Prime(j);
+}
+
+//Part 6
+console.log("Part 6:")
+Calculator = (num1,num2,operator) =>{
+    console.log("num1:"+num1,"num2:"+num2,"operator:"+operator)
+    switch(operator){
+        case('+'):{
+            console.log("num1+num2"+"="+(num1+num2));
+            break;
+        }
+        case('-'):{
+            if(random3-random4>0){
+            console.log("num1-num2"+"="+(num1-num2));
+            }
+            else{
+                console.log("num2-num1"+"="+(num2-num1));
+            }
+            break;
+        }
+        case('*'):{
+            console.log("num1*num2"+"="+(num1*num2));
+            break;
+        }
+        case('/'):{
+            console.log("num1/num2"+"="+(num1/num2));
+            break;
+        }
+        default:{
+            console.log("Use an operator from (+, -, *, or /):")
+        }
+    }
+
+}
+let operators=['+','-','/','*']
+let random9=Math.floor(Math.random()*operators.length+1)
+
+Calculator(random3,random4,operators[random9])
 
 //Part 7:
 console.log("Part 7:")
@@ -199,3 +241,9 @@ multiplication = (arg) =>{
 let random6=Math.floor(Math.random()*1000)
 
 multiplication(random6)
+
+
+
+
+
+
